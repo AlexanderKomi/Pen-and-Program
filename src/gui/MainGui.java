@@ -3,8 +3,6 @@ package gui;
 import java.util.Arrays;
 import java.util.List;
 
-import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Menu;

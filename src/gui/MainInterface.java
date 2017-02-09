@@ -3,7 +3,6 @@
  */
 package gui;
 
-import java.util.List;
 
 /**
  * @author Alexander Komischke
