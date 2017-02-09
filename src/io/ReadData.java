@@ -22,7 +22,6 @@ import model.ressources.Unit;
 public class ReadData{
 
 	private String			game;
-	String					line			= "";
 	private String			_csv_split_by	= ",";
 	private BufferedReader	br;
 
@@ -82,6 +81,7 @@ public class ReadData{
 	 */
 	public void readData( List <String> locations ) {
 
+		String line = "";
 		if ( locations == null ) {
 			return;
 		}
