@@ -10,7 +10,6 @@ public class Tester {
 	public Tester(){
 		System.out.println("\n IMPORTANT: Tester : FOR USE IN GAME, PLS GET RID OF THIS CLASS");
 		System.out.println("Test for git.");
-		System.out.println("Test for git.");
 		
 		//TEST METHODEN
 		//testDiceRoll();
