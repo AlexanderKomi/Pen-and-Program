@@ -30,7 +30,7 @@ public class Pen_and_Paper extends Application{
 		
 		
 		//MainGui mi = new MainGui(primaryStage);
-		System.exit(00);
+		System.exit(0);
 	}
 	
 	public IOController getIOController(){
