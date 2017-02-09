@@ -1,0 +1,10 @@
+Player,false,$,
+name,Jens,$,
+Attribute,KK,5,$
+Attribute,GK,4,$
+Attribute,IN,8,$
+Attribute,WIL,9,$
+Skill,Klettern,10,$
+Skill,Schwimmen,11,$
+Skill,$,,
+Skill,$,,

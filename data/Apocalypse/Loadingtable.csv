@@ -1,0 +1,4 @@
+Skills,data,Apocalypse/ressources/Skills.csv,$
+Attributes,data,Apocalypse/ressources/Attributes.csv,$
+player,folder,Apocalypse/player/,$
+ressources,folder,Apocalypse/ressources/,$

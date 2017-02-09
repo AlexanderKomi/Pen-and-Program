@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane id="Calculator_tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="630.0" minWidth="600.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="30.0" tabMinWidth="100.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CalculatorGuiController">
+  <tabs>
+    <Tab id="skill_tab" text="Skill">
+         <content>
+            <SplitPane id="skill_splitPane" dividerPositions="0.5825082508250825" minHeight="600.0" minWidth="600.0" orientation="VERTICAL">
+               <items>
+                  <AnchorPane id="skill_anchorPaneOver" minHeight="350.0" minWidth="600.0">
+                     <children>
+                        <ComboBox id="skill_comboBoxCharacter" fx:id="skill_comboBoxCharacter" editable="true" layoutX="35.0" layoutY="35.0" maxHeight="25.0" maxWidth="150.0" minHeight="25.0" minWidth="150.0" promptText="Character" />
+                        <CheckBox id="skill_checkBoxNpc" layoutX="234.0" layoutY="39.0" mnemonicParsing="false" onAction="#skill_checkBoxNpc" text="NPC ?" />
+                        <Button id="skill_buttonReset" fx:id="skill_buttonReset" layoutX="490.0" layoutY="28.0" maxHeight="40.0" minHeight="40.0" mnemonicParsing="false" text="reset" />
+                        <ComboBox id="skill_comboBoxSkill" fx:id="skill_comboBoxSkill" editable="true" layoutX="35.0" layoutY="90.0" maxHeight="25.0" maxWidth="150.0" minHeight="25.0" minWidth="150.0" promptText="Skill" />
+                        <TextArea id="skill_textAreaSkillValue" fx:id="skill_textAreaSkillValue" layoutX="335.0" layoutY="90.0" maxHeight="25.0" maxWidth="54.0" minHeight="25.0" minWidth="54.0" promptText="value" />
+                        <TextField id="skill_textFieldSkillMalus" fx:id="skill_textFieldSkillMalus" layoutX="409.0" layoutY="90.0" maxHeight="25.0" maxWidth="54.0" minHeight="25.0" minWidth="54.0" promptText="Malus" />
+                        <TextArea id="skill_textAreaAttribute1Name" fx:id="skill_textAreaAttribute1Name" editable="false" layoutX="35.0" layoutY="140.0" maxHeight="25.0" maxWidth="150.0" minHeight="25.0" minWidth="150.0" promptText="attribute 1" />
+                        <ComboBox id="skill_comboBoxOverUnderAttribute1" fx:id="skill_comboBoxOverUnderAttribute1" layoutX="210.0" layoutY="140.0" maxHeight="25.0" maxWidth="100.0" minHeight="25.0" minWidth="100.0" promptText="underbid" />
+                        <TextArea id="skill_textAreaAttribute1Value" fx:id="skill_textAreaAttribute1Value" editable="false" layoutX="335.0" layoutY="140.0" maxHeight="25.0" maxWidth="54.0" minHeight="25.0" minWidth="54.0" promptText="value" />
+                        <TextField id="skill_textFieldAttribute1Malus" fx:id="skill_textFieldAttribute1Malus" layoutX="409.0" layoutY="140.0" maxHeight="25.0" maxWidth="54.0" minHeight="25.0" minWidth="54.0" promptText="Malus" />
+                        <TextField id="skill_textFieldAttribute1Roll" fx:id="skill_textFieldAttribute1Roll" layoutX="484.0" layoutY="140.0" maxHeight="25.0" maxWidth="54.0" minHeight="25.0" minWidth="54.0" promptText="roll" />
+                        <TextArea id="skill_textAreaAttribute2Name" fx:id="skill_textAreaAttribute2Name" editable="false" layoutX="35.0" layoutY="191.0" maxHeight="25.0" maxWidth="150.0" minHeight="25.0" minWidth="150.0" promptText="attribute 2" />
+                        <ComboBox id="skill_comboBoxOverUnderAttribute2" fx:id="skill_comboBoxOverUnderAttribute2" layoutX="210.0" layoutY="190.0" maxHeight="25.0" maxWidth="100.0" minHeight="25.0" minWidth="100.0" promptText="underbid" />
+                        <TextArea id="skill_textAreaAttribute2Value" fx:id="skill_textAreaAttribute2Value" editable="false" layoutX="335.0" layoutY="190.0" maxHeight="25.0" maxWidth="54.0" minHeight="25.0" minWidth="54.0" promptText="value" />
+                        <TextField id="skill_textFieldAttribute2Malus" fx:id="skill_textFieldAttribute2Malus" layoutX="409.0" layoutY="190.0" maxHeight="25.0" maxWidth="54.0" minHeight="25.0" minWidth="54.0" promptText="Malus" />
+                        <TextField id="skill_textFieldAttribute2Roll" fx:id="skill_textFieldAttribute2Roll" layoutX="484.0" layoutY="190.0" maxHeight="25.0" maxWidth="54.0" minHeight="25.0" minWidth="54.0" promptText="roll" />
+                        <TextArea id="skill_textAreaAttribute3Name" fx:id="skill_textAreaAttribute3Name" editable="false" layoutX="35.0" layoutY="240.0" maxHeight="25.0" maxWidth="150.0" minHeight="25.0" minWidth="150.0" promptText="attribute 3" />
+                        <ComboBox id="skill_comboBoxOverUnderAttribute3" fx:id="skill_comboBoxOverUnderAttribute3" layoutX="210.0" layoutY="240.0" maxHeight="25.0" maxWidth="100.0" minHeight="25.0" minWidth="100.0" promptText="underbid" />
+                        <TextArea id="skill_textAreaAttribute3Value" fx:id="skill_textAreaAttribute3Value" editable="false" layoutX="335.0" layoutY="240.0" maxHeight="25.0" maxWidth="54.0" minHeight="25.0" minWidth="54.0" promptText="value" />
+                        <TextField id="skill_textFieldAttribute3Malus" fx:id="skill_textFieldAttribute3Malus" layoutX="409.0" layoutY="240.0" maxHeight="25.0" maxWidth="54.0" minHeight="25.0" minWidth="54.0" promptText="Malus" />
+                        <TextField id="skill_textFieldAttribute3Roll" fx:id="skill_textFieldAttribute3Roll" layoutX="484.0" layoutY="240.0" maxHeight="25.0" maxWidth="54.0" minHeight="25.0" minWidth="54.0" promptText="roll" />
+                        <Button id="skill_buttonCalculate" layoutX="79.0" layoutY="293.0" maxHeight="40.0" minHeight="40.0" mnemonicParsing="false" onAction="#skill_buttonCalculate" text="calculate" />
+                        <TextField id="skill_textFieldDiceSize" fx:id="skill_textFieldDiceSize" layoutX="409.0" layoutY="301.0" maxHeight="25.0" maxWidth="54.0" minHeight="25.0" minWidth="54.0" promptText="Size" />
+                        <Button id="skill_buttonRandomRolls" layoutX="470.0" layoutY="293.0" maxHeight="40.0" minHeight="40.0" mnemonicParsing="false" onAction="#skill_buttonRandomRolls" text="random rolls" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane id="skill_anchorPaneUnder" minHeight="250.0" minWidth="600.0">
+                     <children>
+                        <TextArea id="skill_textAreaLog" fx:id="skill_textAreaLog" editable="false" promptText="Log:" text="&#10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0" />
+                        <ScrollBar id="skill_scrollBarLog" layoutX="629.0" onScroll="#skill_scrollBarLog" orientation="VERTICAL" prefWidth="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+         </content></Tab>
+    <Tab id="attribute_tab" text="Attribute">
+         <content>
+            <SplitPane id="attribute_splitPane" dividerPositions="0.6703125" minHeight="600.0" minWidth="600.0" orientation="VERTICAL">
+               <items>
+                  <AnchorPane id="attribute_anchorPaneOver" minHeight="350.0" minWidth="600.0">
+                     <children>
+                        <ComboBox id="attribute_comboBoxCharacter" editable="true" layoutX="35.0" layoutY="35.0" maxHeight="25.0" maxWidth="150.0" minHeight="25.0" minWidth="150.0" promptText="Character" />
+                        <CheckBox id="attribute_checkBoxNpc" layoutX="234.0" layoutY="39.0" mnemonicParsing="false" text="NPC ?" />
+                        <Button id="attribute_buttonReset" layoutX="490.0" layoutY="28.0" maxHeight="40.0" minHeight="40.0" mnemonicParsing="false" text="reset" />
+                        <ComboBox id="attribute_comboBoxAttribute1" editable="true" layoutX="35.0" layoutY="140.0" maxHeight="25.0" maxWidth="150.0" minHeight="25.0" minWidth="150.0" promptText="Attribute" />
+                        <ComboBox id="attribute_comboBoxOverUnderAttribute1" layoutX="210.0" layoutY="140.0" maxHeight="25.0" maxWidth="100.0" minHeight="25.0" minWidth="100.0" promptText="underbid" />
+                        <TextArea id="attribute_textAreaAttribute1Value" editable="false" layoutX="335.0" layoutY="140.0" maxHeight="25.0" maxWidth="54.0" minHeight="25.0" minWidth="54.0" promptText="value" />
+                        <TextField id="attribute_textFieldAttribute1Malus" layoutX="409.0" layoutY="140.0" maxHeight="25.0" maxWidth="54.0" minHeight="25.0" minWidth="54.0" promptText="Malus" />
+                        <TextField id="attribute_textFieldAttribute1Roll" layoutX="484.0" layoutY="140.0" maxHeight="25.0" maxWidth="54.0" minHeight="25.0" minWidth="54.0" promptText="roll" />
+                        <Button id="attribute_buttonCalculate" layoutX="79.0" layoutY="293.0" maxHeight="40.0" minHeight="40.0" mnemonicParsing="false" text="calculate" />
+                        <TextField id="attribute_textFieldDiceSize" layoutX="409.0" layoutY="301.0" maxHeight="25.0" maxWidth="54.0" minHeight="25.0" minWidth="54.0" promptText="Size" />
+                        <Button id="attribute_buttonRandomRolls" layoutX="470.0" layoutY="293.0" maxHeight="40.0" minHeight="40.0" mnemonicParsing="false" text="random rolls" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane id="attribute_anchorPaneUnder" minHeight="250.0" minWidth="600.0">
+                     <children>
+                        <TextArea id="attribute_textAreaLog" editable="false" promptText="Log:" text="&#10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0" />
+                        <ScrollBar id="attribute_scrollBarLog" layoutX="629.0" orientation="VERTICAL" prefWidth="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+         </content></Tab>
+  </tabs>
+</TabPane>

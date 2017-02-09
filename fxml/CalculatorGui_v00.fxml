@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane dividerPositions="0.6703125" minHeight="600.0" minWidth="600.0" orientation="VERTICAL" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+  <items>
+    <AnchorPane minHeight="350.0" minWidth="600.0">
+         <children>
+            <ComboBox id="comboBoxCharacter" layoutX="35.0" layoutY="38.0" prefWidth="150.0" promptText="Character" />
+            <TextArea id="textAreaNpcOrPlayer" editable="false" layoutX="217.0" layoutY="32.0" prefHeight="38.0" prefWidth="99.0" promptText="NPC or Player ?" />
+            <Button id="buttonReset" layoutX="490.0" layoutY="38.0" mnemonicParsing="false" text="reset" />
+            <ComboBox id="comboBoxSkill" layoutX="35.0" layoutY="87.0" prefWidth="150.0" promptText="Skill" />
+            <TextArea id="textAreaSkillValue" layoutX="334.0" layoutY="81.0" prefHeight="25.0" prefWidth="62.0" promptText="value" />
+            <TextField id="textFieldSkillMalus" layoutX="409.0" layoutY="88.0" prefHeight="25.0" prefWidth="53.0" promptText="Malus" />
+            <TextArea id="textAreaAttribute1Name" editable="false" layoutX="35.0" layoutY="134.0" prefHeight="17.0" prefWidth="150.0" promptText="attribute 1" />
+            <ChoiceBox id="choiceBoxOverUnderAttribute1" layoutX="217.0" layoutY="141.0" prefHeight="25.0" prefWidth="99.0" />
+            <TextArea id="textAreaAttribute1Value" layoutX="334.0" layoutY="134.0" prefHeight="38.0" prefWidth="62.0" promptText="value" />
+            <TextField id="textFieldAttribute1Malus" layoutX="409.0" layoutY="141.0" prefHeight="25.0" prefWidth="53.0" promptText="Malus" />
+            <TextField id="textFieldAttribute1Roll" layoutX="484.0" layoutY="141.0" prefHeight="25.0" prefWidth="53.0" promptText="roll" />
+            <TextArea id="textAreaAttribute2Name" editable="false" layoutX="35.0" layoutY="182.0" prefHeight="38.0" prefWidth="150.0" promptText="attribute 2" />
+            <ChoiceBox id="choiceBoxOverUnderAttribute2" layoutX="217.0" layoutY="188.0" prefHeight="25.0" prefWidth="99.0" />
+            <TextArea id="textAreaAttribute2Value" layoutX="334.0" layoutY="183.0" prefHeight="38.0" prefWidth="62.0" promptText="value" />
+            <TextField id="textFieldAttribute2Malus" layoutX="409.0" layoutY="188.0" prefHeight="25.0" prefWidth="53.0" promptText="Malus" />
+            <TextField id="textFieldAttribute2Roll" layoutX="484.0" layoutY="188.0" prefHeight="25.0" prefWidth="53.0" promptText="roll" />
+            <TextArea id="textAreaAttribute3Name" editable="false" layoutX="35.0" layoutY="230.0" prefHeight="38.0" prefWidth="150.0" promptText="attribute 3" />
+            <ChoiceBox id="choiceBoxOverUnderAttribute3" layoutX="217.0" layoutY="237.0" prefHeight="25.0" prefWidth="99.0" />
+            <TextArea id="textAreaAttribute3Value" layoutX="334.0" layoutY="231.0" prefHeight="38.0" prefWidth="62.0" promptText="value" />
+            <TextField id="textFieldAttribute3Malus" layoutX="409.0" layoutY="237.0" prefHeight="25.0" prefWidth="53.0" promptText="Malus" />
+            <TextField id="textFieldAttribute3Roll" layoutX="484.0" layoutY="238.0" prefHeight="25.0" prefWidth="53.0" promptText="roll" />
+            <Button id="buttonCalculate" layoutX="79.0" layoutY="300.0" mnemonicParsing="false" text="calculate" />
+            <Button id="buttonRandomRolls" layoutX="469.0" layoutY="300.0" mnemonicParsing="false" text="random rolls" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="250.0" minWidth="600.0">
+         <children>
+            <TextArea id="textAreaLog" editable="false" promptText="Log:" text="&#10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0" />
+            <ScrollBar id="scrollBarLog" layoutX="629.0" orientation="VERTICAL" prefWidth="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+  </items>
+</SplitPane>
