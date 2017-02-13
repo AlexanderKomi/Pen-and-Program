@@ -12,7 +12,7 @@ import model.ressources.player.Unit;
  * <br>
  * This class gets the raw data and magicly transforms it into variables.
  */
-public class Units_To_Variables {
+public class Units_ToVar {
 
 	// GLOBAL VARIABLES
 
@@ -30,7 +30,7 @@ public class Units_To_Variables {
 	 * This is the default Constructor. For further use, implement more
 	 * parameters. Only a setter is not enough.
 	 */
-	public Units_To_Variables(List<List<String>> units_as_data, List<Skill> skills, List<Attribute>attributes) {
+	public Units_ToVar(List<List<String>> units_as_data, List<Skill> skills, List<Attribute>attributes) {
 		
 		units = new ArrayList<Unit>();
 		this.units_as_data = units_as_data;

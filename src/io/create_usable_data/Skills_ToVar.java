@@ -6,7 +6,7 @@ import java.util.List;
 import model.ressources.player.Attribute;
 import model.ressources.player.Skill;
 
-public class Skills_To_Variables {
+public class Skills_ToVar {
 
 	private List<String> skills_as_data;
 	private List<Skill> skills;
@@ -15,7 +15,7 @@ public class Skills_To_Variables {
 	// CONSTRUCTORS
 	//
 
-	public Skills_To_Variables(List<String> ls, List<Attribute> attributes) {
+	public Skills_ToVar(List<String> ls, List<Attribute> attributes) {
 		this.setSkills_as_data(ls);
 		setSkills(new ArrayList<Skill>());
 	}

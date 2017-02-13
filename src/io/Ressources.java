@@ -2,9 +2,9 @@ package io;
 
 import java.util.List;
 
-import io.create_usable_data.Attributes_To_Variables;
-import io.create_usable_data.Units_To_Variables;
-import io.create_usable_data.Skills_To_Variables;
+import io.create_usable_data.Attributes_ToVar;
+import io.create_usable_data.Units_ToVar;
+import io.create_usable_data.Skills_ToVar;
 import model.ressources.player.Attribute;
 import model.ressources.player.Skill;
 import model.ressources.player.Unit;
@@ -47,19 +47,21 @@ public class Ressources {
 
 		this.setGame( game );
 
+		
 		ReadData readData = new ReadData( game );
 		
-		List <String> skills_ad = readData.get_skills_as_data();
-		List <String> attributes_ad = readData.get_attributes_as_data();
-		List <List <String>> units_ad = readData.get_units_as_data();
+		
+		List <String> skills_ad = readData.getSkills_AD();
+		List <String> attributes_ad = readData.getAttributes_AD();
+		List <List <String>> units_ad = readData.getUnits_AD();
 
-		Attributes_To_Variables atv = new Attributes_To_Variables(attributes_ad);
-		Skills_To_Variables stv = new Skills_To_Variables(skills_ad,attributes);
+		Attributes_ToVar atv = new Attributes_ToVar(attributes_ad);
+		Skills_ToVar stv = new Skills_ToVar(skills_ad,attributes);
 		
 		this.attributes = atv.getAttributes();
 		this.skills = stv.getSkills();
 
-		Units_To_Variables dataToVar = new Units_To_Variables(units_ad, skills ,attributes);
+		Units_ToVar dataToVar = new Units_ToVar(units_ad, skills ,attributes);
 		this.units = dataToVar.getUnits();
 		
 	}
@@ -70,8 +72,26 @@ public class Ressources {
 		return game_choosen;
 	}
 
-	public List <Skill> getSkills() {
+	public List<Skill> getSkills() {
 		return this.skills;
+	}
+	
+	@SuppressWarnings("unused")
+	private void updateAttributes(){
+		ReadData readData = new ReadData( game );
+		List <String> attributes_ad = readData.getAttributes_AD();
+		Attributes_ToVar atv = new Attributes_ToVar(attributes_ad);
+		this.attributes = atv.getAttributes();
+		
+	}
+	
+	@SuppressWarnings("unused")
+	private void updateSkills(){
+		ReadData readData = new ReadData( game );
+		
+		List <String> skills_ad = readData.getSkills_AD();
+		Skills_ToVar stv = new Skills_ToVar(skills_ad,attributes);
+		setSkills(stv.getSkills());
 	}
 
 	public void setSkills( List <Skill> skills ) {

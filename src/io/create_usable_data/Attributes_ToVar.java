@@ -5,20 +5,20 @@ import java.util.List;
 
 import model.ressources.player.Attribute;
 
-public class Attributes_To_Variables {
+public class Attributes_ToVar {
 
 
 	private List<String> attributes_as_data;
 	private List<Attribute> attributes;
 	
 	
-	public Attributes_To_Variables(){
+	public Attributes_ToVar(){
 		this.attributes = new ArrayList<Attribute>();
 		this.attributes_as_data = new ArrayList<String>();
 		attributes_FD_to_variables();
 	}
 	
-	public Attributes_To_Variables(List<String> attributes_as_data){
+	public Attributes_ToVar(List<String> attributes_as_data){
 		this.attributes = new ArrayList<Attribute>();
 		this.attributes_as_data =attributes_as_data;
 		attributes_FD_to_variables();

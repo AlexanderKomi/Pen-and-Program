@@ -294,15 +294,15 @@ public class ReadData {
 		return this.units;
 	}
 
-	public List<String> get_attributes_as_data() {
+	public List<String> getAttributes_AD() {
 		return this.attributes_as_data;
 	}
 
-	public List<String> get_skills_as_data() {
+	public List<String> getSkills_AD() {
 		return this.skills_as_data;
 	}
 
-	public List<List<String>> get_units_as_data() {
+	public List<List<String>> getUnits_AD() {
 		return this.units_as_data;
 	}
 
