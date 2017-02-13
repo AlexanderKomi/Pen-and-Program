@@ -1,0 +1,42 @@
+Player,true,$,
+name,Vorlage,$,
+race,Mensch,$,
+Attribute,KK,8,$
+Attribute,GK,8,$
+Attribute,AU,8,$
+Attribute,IN,8,$
+Attribute,CH,8,$
+Attribute,BE,8,$
+Skill,Auto fahren,0,$
+Skill,Motorrad fahren,0,$
+Skill,Boot fahren,0,$
+Skill,Kochen und Feuer machen,0,$
+Skill,Angeln,0,$
+Skill,Werfen,0,$
+Skill,Pistole,0,$
+Skill,Gewehr,0,$
+Skill,Bogen / Armbrust,0,$
+Skill,Waffenloser Kampf,0,$
+Skill,Scharfe Waffen,0,$
+Skill,Stumpfe Waffen,0,$
+Skill,Spitze Waffen,0,$
+Skill,Feilschen,0,$
+Skill,Manipulieren,0,$
+Skill,Lügen,0,$
+Skill,Beruhigen,0,$
+Skill,Überreden,0,$
+Skill,Menschenkenntnis,0,$
+Skill,Schwimmen,0,$
+Skill,Rennen,0,$
+Skill,Springen,0,$
+Skill,Klettern,0,$
+Skill,Schleichen,0,$
+Skill,Erste Hilfe und Wundenversorgung,0,$
+Skill,Spurenlesen,0,$
+Skill,Recycling,0,$
+Skill,Tarnen und Verstecken,0,$
+Skill,mit Tieren umgehen und zähmen,0,$
+Skill,Mechanik / Handwerk / Basteln,0,$
+Skill,Mathematik / Physik / Chemie,0,$
+Skill,Medizin – Biologie,0,$
+Skill,Meteorologie und Naturkunde,0,$
