@@ -97,6 +97,7 @@ public class ReadData {
 						}
 					}
 				}
+				br.close();
 			}
 
 			catch (Exception e) {
