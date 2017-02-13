@@ -1,5 +1,6 @@
-Körperkraft,KK,kk,Koerperkraft,Körp,$
-Geschicklichkeit,GK,gk,ges,Geschk,$
-Ausdauer,AU,au,aus,Ausd,$
-Intelligenz,IN,in,int,Intel,$
-Charme,CH,ch,cha,Charm,$
+Körperkraft,KK,kk,Koerperkraft,Körp,kKK,Köperkraft,$
+Geschicklichkeit,GK,gk,ges,Geschk,$,,
+Ausdauer,AU,au,aus,Ausd,$,,
+Intelligenz,IN,in,int,Intel,$,,
+Charme,CH,ch,cha,Charm,$,,
+Belastbarkeit,Mentale Belastbarkeit,BE,be,MB,mb,$,

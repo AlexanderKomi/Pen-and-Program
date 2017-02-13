@@ -1,2 +1,33 @@
-Klettern,KK,GK,GK,$
-Schwimmen,KK,KK,GK,$
+Auto fahren,GK,GK,BE,$
+Motorrad fahren,GK,GK,BE,$
+Boot fahren,GK,IN,BE,$
+Kochen und Feuer machen,GK,IN,BE,$
+Angeln,IN,BE,BE,$
+Werfen,GK,GK,KK,$
+Pistole,GK,GK,AU,$
+Gewehr,GK,GK,AU,$
+Bogen / Armbrust,GK,GK,AU,$
+Waffenloser Kampf,KK,GK,AU,$
+Scharfe Waffen,KK,KK,AU,$
+Stumpfe Waffen,KK,KK,AU,$
+Spitze Waffen,KK,GK,GK,$
+Feilschen,CH,CH,CH,$
+Manipulieren,CH,CH,IN,$
+Lügen,CH,CH,IN,$
+Beruhigen,CH,CH,IN,$
+Überreden,CH,IN,IN,$
+Menschenkenntnis,BE,IN,IN,$
+Schwimmen,KK,AU,AU,$
+Rennen,KK,AU,AU,$
+Springen,KK,KK,GK,$
+Klettern,KK,GK,AU,$
+Schleichen,GK,GK,AU,$
+Erste Hilfe und Wundenversorgung,GK,BE,BE,$
+Spurenlesen,IN,IN,BE,$
+Recycling,GK,IN,BE,$
+Tarnen und Verstecken,GK,AU,BE,$
+mit Tieren umgehen und zähmen,CH,IN,BE,$
+Mechanik / Handwerk / Basteln,IN,IN,BE,$
+Mathematik / Physik / Chemie,IN,IN,BE,$
+Medizin – Biologie,IN,IN,BE,$
+Meteorologie und Naturkunde,IN,BE,BE,$
