@@ -22,7 +22,6 @@ public class Pen_and_Paper extends Application{
 		test = new Tester();
 		
 		io = new IOController("Apocalypse");
-		io.newRes();
 		
 		test.setGame();
 		

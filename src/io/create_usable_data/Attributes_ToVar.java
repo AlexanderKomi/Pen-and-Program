@@ -3,6 +3,7 @@ package io.create_usable_data;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import model.ressources.player.Attribute;
 
 public class Attributes_ToVar {
@@ -51,6 +52,10 @@ public class Attributes_ToVar {
 			}
 		}
 
+		if(this.attributes.isEmpty()){
+			throw new RuntimeException("\n\nERROR: ATTRIBUTES IS EMTPY, after reading data.\n\n");
+		}
+		
 		return this.attributes;
 	}
 	

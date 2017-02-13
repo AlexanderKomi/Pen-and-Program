@@ -56,14 +56,24 @@ public class Ressources {
 		List <List <String>> units_ad = readData.getUnits_AD();
 
 		Attributes_ToVar atv = new Attributes_ToVar(attributes_ad);
-		Skills_ToVar stv = new Skills_ToVar(skills_ad,attributes);
-		
 		this.attributes = atv.getAttributes();
-		this.skills = stv.getSkills();
-
-		Units_ToVar dataToVar = new Units_ToVar(units_ad, skills ,attributes);
-		this.units = dataToVar.getUnits();
 		
+		Skills_ToVar stv = new Skills_ToVar(skills_ad , this.attributes);
+		this.skills = stv.getSkills();
+		
+		Units_ToVar dataToVar = new Units_ToVar(units_ad, this.skills , this.attributes);
+		this.units = dataToVar.getUnits();
+		checkForErrors();
+	}
+
+	private void checkForErrors() {
+		// TODO Auto-generated method stub
+		if(skills.size() == 0){
+			System.out.println("\n\nERROR : SKILLS IS 0 -> RESSOURCES\n\n");
+		}
+		if(attributes.size() == 0){
+			System.out.println("\n\nERROR : ATTRIBUTES IS 0 -> RESSOURCES\n\n");
+		}
 	}
 
 	// Setter and Getter

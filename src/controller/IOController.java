@@ -30,20 +30,11 @@ public class IOController {
 		this.game = game;
 
 		if (this.game.equals("Apocalypse")) {
-			newRes();
+			this. res = new Ressources("Apocalypse");
 		} else {
 			// TODO: Implement better solution.
 			throw new RuntimeException("ONLY APOCALYPSE IMPLEMENTET YET! Pls only select this.");
 		}
-	}
-
-	/**
-	 * Creates new Ressources and tries to load the game from data.<br>
-	 * 
-	 * @return Ressources The new set ressources are returned.
-	 */
-	public Ressources newRes() {
-		return this.res = new Ressources(this.game);
 	}
 
 	public Ressources getRes() {

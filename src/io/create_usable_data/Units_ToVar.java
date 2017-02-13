@@ -27,8 +27,8 @@ public class Units_ToVar {
 	
 	
 	/**
-	 * This is the default Constructor. For further use, implement more
-	 * parameters. Only a setter is not enough.
+	 * This is the default Constructor.<br>
+	 * Search Attributes before searching skills.
 	 */
 	public Units_ToVar(List<List<String>> units_as_data, List<Skill> skills, List<Attribute>attributes) {
 		
@@ -52,9 +52,11 @@ public class Units_ToVar {
 	 */
 	private Skill searchForSkill(String toSearch, String playerName) {
 
+		System.out.println("Searching Skill : " + toSearch +" in Player " + playerName);
 		for (Skill s : skills) {
 			if (s.getName().equals(toSearch)) {
-				return new Skill(s, searchForValue(s.getName(), playerName));
+				System.out.println("Skill found in Player : " + s.getName() + " , " + ""+ s.getValue());
+				return new Skill(s);
 			}
 		}
 
@@ -64,44 +66,13 @@ public class Units_ToVar {
 	private Attribute searchForAttribute(String toSearch, String playerName) {
 		for (Attribute a : attributes) {
 			if (a.getName().equals(toSearch)) {
-				return new Attribute(a, searchForValue(a.getName(), playerName));
+				System.out.println("Attribute found : " + a.getName() + " , " + a.getValue());
+				return new Attribute(a);
 			}
 		}
 		return new Attribute(toSearch);
 	}
 
-	/**
-	 * Searches in raw data from units for the value of a Skill or Attribute.
-	 * 
-	 * @param Name
-	 *            of the Skill or attribute in the table
-	 */
-	private int searchForValue(String name, String playerName) {
-
-		boolean playerNameFound = false;
-		int value = 0;
-
-		for (List<String> ls : units_as_data) {
-			for (String s : ls) {
-				if (s.equals(playerName)) {
-					playerNameFound = true;
-				}
-				if (s.equals(name) && playerNameFound) {
-
-					// TODO : Implement for Attributes and check in Console
-					// Output if Values match!
-					try {
-						value = Integer.parseInt(ls.get(ls.indexOf(s) + 1)); //TODO : Better solution for less magical numbers.
-					} catch (NumberFormatException e) {
-						e.printStackTrace();
-
-					}
-					return value;
-				}
-			}
-		}
-		return value;
-	}
 
 	/**
 	 * Puts all the data,which are Strings, from units_as_data and creates new
@@ -131,7 +102,6 @@ public class Units_ToVar {
 
 						if (prevElement.equals("Player") || prevElement.equals("player")) {
 							try {
-								System.out.println("PlayerStatus registered : " + s);
 								playerStatus = Boolean.getBoolean(s);
 							} catch (Exception e) {
 								e.printStackTrace();
@@ -139,17 +109,14 @@ public class Units_ToVar {
 							}
 						} else if (prevElement.equals("Name") || prevElement.equals("name")) {
 							try {
-								System.out.println("Playname found : " + s);
 								playerName = s;
 							} catch (Exception e) {
 								e.printStackTrace();
 								System.out.println("ERROR : Can not get the Playername");
 							}
-						} else if (prevElement.equals("Skill") || prevElement.equals("skill")) {
-							System.out.println("Skill found : " + s);
+						} else if (prevElement.equals("Skill")) {
 							playerSkills.add(searchForSkill(s, playerName));
-						} else if (prevElement.equals("Attribute") || prevElement.equals("attribute")) {
-							System.out.println("attribute found : " + s);
+						} else if (prevElement.equals("Attribute")) {
 							playerAtts.add(searchForAttribute(s, playerName));
 						}
 					}

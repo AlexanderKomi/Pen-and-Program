@@ -8,7 +8,7 @@ import model.ressources.player.Skill;
 
 public class Skills_ToVar {
 
-	private List<String> skills_as_data;
+	private List<String> skills_AD;
 	private List<Skill> skills;
 
 	//
@@ -16,7 +16,7 @@ public class Skills_ToVar {
 	//
 
 	public Skills_ToVar(List<String> ls, List<Attribute> attributes) {
-		this.setSkills_as_data(ls);
+		this.setSkills_AD(ls);
 		setSkills(new ArrayList<Skill>());
 	}
 
@@ -30,7 +30,7 @@ public class Skills_ToVar {
 		List<Attribute> req_for_skill = new ArrayList<>();
 		String skill = "";
 		String prevSkill = "";
-		for (String s : skills_as_data) {
+		for (String s : skills_AD) {
 
 			if (s != null) {
 
@@ -54,9 +54,13 @@ public class Skills_ToVar {
 			}
 		}
 
+		if(this.skills.isEmpty()){
+			throw new RuntimeException("\n\n ERROR : AFTER READING SKILLS IS EMPTY");
+		}
+		
 		return this.skills;
 	}
-	
+
 	/**
 	 * Searches all skills in a and if there are any alias in b, these alias
 	 * will be set in a.
@@ -99,11 +103,11 @@ public class Skills_ToVar {
 	}
 
 	public List<String> getSkills_as_data() {
-		return skills_as_data;
+		return skills_AD;
 	}
 
-	public void setSkills_as_data(List<String> skills_as_data) {
-		this.skills_as_data = skills_as_data;
+	public void setSkills_AD(List<String> skills_as_data) {
+		this.skills_AD = skills_as_data;
 	}
 
 }
