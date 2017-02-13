@@ -3,9 +3,9 @@ package io.create_usable_data;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.ressources.Attribute;
-import model.ressources.Skill;
-import model.ressources.Unit;
+import model.ressources.player.Attribute;
+import model.ressources.player.Skill;
+import model.ressources.player.Unit;
 
 /**
  * Still WIP.<br>

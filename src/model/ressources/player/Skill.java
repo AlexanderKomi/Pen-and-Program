@@ -1,4 +1,4 @@
-package model.ressources;
+package model.ressources.player;
 
 import java.util.ArrayList;
 import java.util.List;

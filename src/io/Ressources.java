@@ -3,9 +3,9 @@ package io;
 import java.util.List;
 
 import io.create_usable_data.Data_To_Variables;
-import model.ressources.Attribute;
-import model.ressources.Skill;
-import model.ressources.Unit;
+import model.ressources.player.Attribute;
+import model.ressources.player.Skill;
+import model.ressources.player.Unit;
 
 /**
  * When data was read or should be wrote; this class contains everything you can

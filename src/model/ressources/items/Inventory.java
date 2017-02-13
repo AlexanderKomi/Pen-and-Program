@@ -1,7 +1,7 @@
 /**
  * 
  */
-package model.ressources;
+package model.ressources.items;
 
 /**
  * @author Micha
