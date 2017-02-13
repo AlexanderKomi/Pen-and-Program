@@ -63,10 +63,6 @@ public class ReadData {
 
 	}
 
-	/**
-	 * Puts all the filtered data in variables. <br>
-	 * The variables can be used for further use.
-	 */
 
 	/**
 	 * Reads the Data from the paths in locations and writes the result in the

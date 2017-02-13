@@ -19,12 +19,10 @@ public class Pen_and_Paper extends Application{
 	public void start(Stage primaryStage) throws Exception {
 
 		//GameLogicController glc = new GameLogicController();
-		
-		io = new IOController();
 		test = new Tester();
 		
-		io.setGame("Apocalypse");
-		io.load(io.game);
+		io = new IOController("Apocalypse");
+		io.newRes();
 		
 		test.setGame();
 		
