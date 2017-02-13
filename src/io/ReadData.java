@@ -6,10 +6,6 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.ressources.player.Attribute;
-import model.ressources.player.Skill;
-import model.ressources.player.Unit;
-
 /**
  * Still WIP. <br>
  * <br>
@@ -32,10 +28,6 @@ public class ReadData {
 	List<String> skills_as_data;
 	List<List<String>> units_as_data;
 
-	List<Attribute> attributes;
-	List<Skill> skills;
-	List<Unit> units;
-
 	/**
 	 * Still WIP. <br>
 	 * <br>
@@ -53,10 +45,6 @@ public class ReadData {
 		attributes_as_data = new ArrayList<>();
 		skills_as_data = new ArrayList<>();
 		units_as_data = new ArrayList<>();
-
-		attributes = new ArrayList<Attribute>();
-		skills = new ArrayList<Skill>();
-		units = new ArrayList<Unit>();
 
 		locations = getFileLocations(new java.io.File("data/" + getGame() + "/").getAbsolutePath());
 		readData(locations);
@@ -193,20 +181,6 @@ public class ReadData {
 		}
 	}
 
-	public void printAtts() {
-
-		if (attributes == null) {
-			System.out.println("atts : No data found.");
-			return;
-		}
-
-		System.out.println("\nAttribute : ");
-
-		for (Attribute s : attributes) {
-			System.out.println(s.toString());
-		}
-	}
-
 	/**
 	 * Prints all Skills found in Files
 	 */
@@ -224,31 +198,6 @@ public class ReadData {
 		}
 	}
 
-	public void printSkills() {
-
-		if (skills == null) {
-			System.out.println("skills : No data found.");
-			return;
-		}
-
-		System.out.println("\nSkills : ");
-
-		for (Skill s : skills) {
-			System.out.println(s.toString());
-		}
-
-		System.out.println("No more Skills");
-	}
-
-	public void printUnits() {
-		System.out.println("Units : \n");
-		;
-		for (Unit u : units) {
-			System.out.println(u.toString());
-		}
-		System.out.println("No more Units");
-	}
-
 	/**
 	 * Prints everything that is used from Files.
 	 */
@@ -258,10 +207,6 @@ public class ReadData {
 		printAttsFromData();
 		printSkillsFromData();
 		printUnitsFromData();
-
-		printAtts();
-		printSkills();
-		printUnits();
 	}
 
 	// GETTER AND SETTER
@@ -280,18 +225,6 @@ public class ReadData {
 
 	public void setGame(String game) {
 		this.game = game;
-	}
-
-	public List<Skill> getSkills() {
-		return this.skills;
-	}
-
-	public List<Attribute> getAttributes() {
-		return this.attributes;
-	}
-
-	public List<Unit> getUnits() {
-		return this.units;
 	}
 
 	public List<String> getAttributes_AD() {
