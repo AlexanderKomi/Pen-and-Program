@@ -14,4 +14,20 @@ public class Wearable extends Item {
 
 	}
 
+	public String getEffect() {
+		return effect;
+	}
+
+	public void setEffect(String effect) {
+		this.effect = effect;
+	}
+
+	public int getDefensValue() {
+		return defensValue;
+	}
+
+	public void setDefensValue(int defensValue) {
+		this.defensValue = defensValue;
+	}
+
 }

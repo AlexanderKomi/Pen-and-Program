@@ -9,7 +9,6 @@ public class Tester {
 
 	public Tester(){
 		System.out.println("\n IMPORTANT: Tester : FOR USE IN GAME, PLS GET RID OF THIS CLASS");
-		System.out.println("Test for git . 2. Versuch");
 		
 		//TEST METHODEN
 		//testDiceRoll();
@@ -23,8 +22,6 @@ public class Tester {
 	public void testDiceRoll(){
 		Dice d = new Dice(12);
 		int tries = 1000;
-		
-		
 		
 		for(int i = 0 ; i < tries ; i++){
 			d.roll();
