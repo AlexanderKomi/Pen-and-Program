@@ -17,20 +17,22 @@ public class Skills_ToVar {
 
 	public Skills_ToVar(List<String> ls, List<Attribute> attributes) {
 		this.setSkills_AD(ls);
-		setSkills(new ArrayList<Skill>());
+		this.setSkills(new ArrayList<Skill>());
+		setSkills(getSkills(attributes));
 	}
 
 	//
 	// METHODS
 	//
 
+	/**
+	 * */
 	public List<Skill> getSkills(List<Attribute> attributes) {
-		// Skills
 
 		List<Attribute> req_for_skill = new ArrayList<>();
 		String skill = "";
 		String prevSkill = "";
-		for (String s : skills_AD) {
+		for (String s : this.skills_AD) {
 
 			if (s != null) {
 
@@ -40,8 +42,11 @@ public class Skills_ToVar {
 
 				if (s.equals("$")) {
 					req_for_skill = searchForAlias(req_for_skill, attributes);
+					
 					this.skills.add(new Skill(skill, req_for_skill));
+					
 					req_for_skill = new ArrayList<Attribute>();
+					
 					prevSkill = s;
 				} else if (!s.equals("$") && s != null) {
 

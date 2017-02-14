@@ -63,7 +63,7 @@ public class Skill {
 	
 	public Skill(Skill s){
 		this.setName( s.getName() );
-		this.setValue( s.value );
+		this.setValue( s.getValue() );
 		this.setAttributes( s.getAttributes() );
 	}
 	
