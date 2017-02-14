@@ -65,7 +65,6 @@ public class Ressources {
 	}
 
 	private void checkForErrors() {
-		// TODO Auto-generated method stub
 		if ( skills.size() == 0 ) {
 			System.out.println( "\n\nERROR : SKILLS IS 0 -> RESSOURCES\n\n" );
 		}
