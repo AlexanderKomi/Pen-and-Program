@@ -18,11 +18,11 @@ import model.ressources.player.Unit;
  */
 public class Ressources {
 
-	private boolean				game_choosen;
-	private List <Skill>		skills;
-	private List <Attribute>	attributes;
-	private List <Unit>			units;
-	private String				game;
+	private boolean game_choosen;
+	private List < Skill > skills;
+	private List < Attribute > attributes;
+	private List < Unit > units;
+	private String game;
 
 	// Constructors
 	/**
@@ -47,32 +47,30 @@ public class Ressources {
 
 		this.setGame( game );
 
-		
 		ReadData readData = new ReadData( game );
-		
-		
-		List <String> skills_ad = readData.getSkills_AD();
-		List <String> attributes_ad = readData.getAttributes_AD();
-		List <List <String>> units_ad = readData.getUnits_AD();
 
-		Attributes_ToVar atv = new Attributes_ToVar(attributes_ad);
+		List < String > skills_ad = readData.getSkills_AD();
+		List < String > attributes_ad = readData.getAttributes_AD();
+		List < List < String > > units_ad = readData.getUnits_AD();
+
+		Attributes_ToVar atv = new Attributes_ToVar( attributes_ad );
 		this.attributes = atv.getAttributes();
-		
-		Skills_ToVar stv = new Skills_ToVar(skills_ad , this.attributes);
+
+		Skills_ToVar stv = new Skills_ToVar( skills_ad, this.attributes );
 		this.skills = stv.getSkills();
-		
-		Units_ToVar dataToVar = new Units_ToVar(units_ad, this.skills , this.attributes);
+
+		Units_ToVar dataToVar = new Units_ToVar( units_ad, this.skills, this.attributes );
 		this.units = dataToVar.getUnits();
 		checkForErrors();
 	}
 
 	private void checkForErrors() {
 		// TODO Auto-generated method stub
-		if(skills.size() == 0){
-			System.out.println("\n\nERROR : SKILLS IS 0 -> RESSOURCES\n\n");
+		if ( skills.size() == 0 ) {
+			System.out.println( "\n\nERROR : SKILLS IS 0 -> RESSOURCES\n\n" );
 		}
-		if(attributes.size() == 0){
-			System.out.println("\n\nERROR : ATTRIBUTES IS 0 -> RESSOURCES\n\n");
+		if ( attributes.size() == 0 ) {
+			System.out.println( "\n\nERROR : ATTRIBUTES IS 0 -> RESSOURCES\n\n" );
 		}
 	}
 
@@ -82,37 +80,37 @@ public class Ressources {
 		return game_choosen;
 	}
 
-	public List<Skill> getSkills() {
+	public List < Skill > getSkills() {
 		return this.skills;
 	}
-	
-	@SuppressWarnings("unused")
-	private void updateAttributes(){
+
+	@ SuppressWarnings ( "unused" )
+	private void updateAttributes() {
 		ReadData readData = new ReadData( game );
-		List <String> attributes_ad = readData.getAttributes_AD();
-		Attributes_ToVar atv = new Attributes_ToVar(attributes_ad);
+		List < String > attributes_ad = readData.getAttributes_AD();
+		Attributes_ToVar atv = new Attributes_ToVar( attributes_ad );
 		this.attributes = atv.getAttributes();
-		
-	}
-	
-	@SuppressWarnings("unused")
-	private void updateSkills(){
-		ReadData readData = new ReadData( game );
-		
-		List <String> skills_ad = readData.getSkills_AD();
-		Skills_ToVar stv = new Skills_ToVar(skills_ad,attributes);
-		setSkills(stv.getSkills());
+
 	}
 
-	public void setSkills( List <Skill> skills ) {
+	@ SuppressWarnings ( "unused" )
+	private void updateSkills() {
+		ReadData readData = new ReadData( game );
+
+		List < String > skills_ad = readData.getSkills_AD();
+		Skills_ToVar stv = new Skills_ToVar( skills_ad, attributes );
+		setSkills( stv.getSkills() );
+	}
+
+	public void setSkills( List < Skill > skills ) {
 		this.skills = skills;
 	}
 
-	public List <Attribute> getAttributes() {
+	public List < Attribute > getAttributes() {
 		return this.attributes;
 	}
 
-	public void setAttributes( List <Attribute> attributes ) {
+	public void setAttributes( List < Attribute > attributes ) {
 		this.attributes = attributes;
 	}
 
@@ -124,11 +122,11 @@ public class Ressources {
 		this.game = game;
 	}
 
-	public List <Unit> getUnits() {
+	public List < Unit > getUnits() {
 		return this.units;
 	}
 
-	public void setUnits( List <Unit> units ) {
+	public void setUnits( List < Unit > units ) {
 		this.units = units;
 	}
 

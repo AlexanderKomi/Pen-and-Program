@@ -11,15 +11,15 @@ public class Unit {
 
 	// GLOBAL VARIABLES
 
-	private boolean				player_status;
-	private String				race;
-	private String				name;
-	private List <Skill>		skills;
-	private List <Attribute>	atts;
+	private boolean player_status;
+	private String race;
+	private String name;
+	private List < Skill > skills;
+	private List < Attribute > atts;
 
 	// CONSTRUCTORS
 
-	public Unit( String name, List <Skill> skills, List <Attribute> atts, boolean player ) {
+	public Unit( String name, List < Skill > skills, List < Attribute > atts, boolean player ) {
 		this.setName( name );
 		this.setSkills( skills );
 		this.setAttributes( atts );
@@ -35,13 +35,13 @@ public class Unit {
 		result += "Playerstatus : " + this.player_status + "\n";
 		result += "Unit : " + this.name + ", Attributes : \n";
 
-		for (Attribute at : this.atts) {
-			result += at.toString() + "\n";
+		for ( Attribute at : this.atts ) {
+			result += "\t" + at.toString() + "\n";
 		}
 
 		result += "Unit : " + this.name + ", Skills : \n";
 
-		for (Skill sk : this.skills) {
+		for ( Skill sk : this.skills ) {
 			result += sk.toString() + "\n";
 		}
 
@@ -66,19 +66,19 @@ public class Unit {
 		this.name = name;
 	}
 
-	public List <Skill> getSkills() {
+	public List < Skill > getSkills() {
 		return skills;
 	}
 
-	public void setSkills( List <Skill> skills ) {
+	public void setSkills( List < Skill > skills ) {
 		this.skills = skills;
 	}
 
-	public List <Attribute> getAttributes() {
+	public List < Attribute > getAttributes() {
 		return atts;
 	}
 
-	public void setAttributes( List <Attribute> atts ) {
+	public void setAttributes( List < Attribute > atts ) {
 		this.atts = atts;
 	}
 
