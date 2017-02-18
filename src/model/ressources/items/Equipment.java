@@ -7,6 +7,6 @@ package model.ressources.items;
  * @author Micha
  *
  */
-public class Equipment {
+public interface Equipment {
 
 }

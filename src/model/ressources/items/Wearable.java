@@ -1,16 +1,18 @@
 package model.ressources.items;
 
+import model.Money;
+
 /**
  * 
  * 
  * 
  * @author Micha
  */
-public class Wearable extends Item {
+public class Wearable extends Item implements Equipment {
 	private int defensValue;
 	private String effect;
 
-	public Wearable() {
+	public Wearable(String name, Money value, String description, int defensvalue, String effect) {
 
 	}
 
