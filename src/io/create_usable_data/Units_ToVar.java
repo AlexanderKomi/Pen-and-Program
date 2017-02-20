@@ -16,10 +16,10 @@ public class Units_ToVar {
 
 	// GLOBAL VARIABLES
 
-	private List < List < String > > units_as_data;
-	private List < Unit > units;
-	private List < Skill > skills;
-	private List < Attribute > attributes;
+	private List<List<String>> units_as_data;
+	private List<Unit> units;
+	private List<Skill> skills;
+	private List<Attribute> attributes;
 
 	//
 	// CONSTRUCTORS
@@ -29,16 +29,16 @@ public class Units_ToVar {
 	 * This is the default Constructor.<br>
 	 * Search Attributes before searching skills.
 	 */
-	public Units_ToVar( List < List < String > > units_as_data, List < Skill > skills, List < Attribute > attributes ) {
+	public Units_ToVar(List<List<String>> units_as_data, List<Skill> skills, List<Attribute> attributes) {
 
-		units = new ArrayList < Unit >();
+		units = new ArrayList<Unit>();
 		this.units_as_data = units_as_data;
 
-		setAttributes( attributes );
-		setSkills( skills );
+		setAttributes(attributes);
+		setSkills(skills);
 
 		this.units = units_AD_to_var();
-		printUnits();
+		 printUnits();
 	}
 
 	//
@@ -49,19 +49,19 @@ public class Units_ToVar {
 	 * Use this with the Skill you search and the name of the player, as a
 	 * String, to find a Skill with the same name in the Skill Ressources.
 	 */
-	private Skill searchForSkill( String toSearch, List < String > ls ) {
+	private Skill searchForSkill(String toSearch, List<String> ls) {
 
 		// System.out.println("Searching Skill : " + toSearch + " in Player " +
 		// playerName);
-		for ( Skill s : skills ) {
-			if ( s.getName().equals( toSearch ) ) {
+		for (Skill s : skills) {
+			if (s.getName().equals(toSearch)) {
 				// System.out.println("Skill found in Skills : " + s.getName() +
 				// " , " + "" + s.getValue());
-				return searchSkillValue( s, ls );
+				return searchSkillValue(s, ls);
 			}
 		}
 
-		return new Skill( toSearch );
+		return new Skill(toSearch);
 	}
 
 	/**
@@ -74,18 +74,18 @@ public class Units_ToVar {
 	 *
 	 * @return Skill Returns the skill of the player, with all aliases.
 	 */
-	private Skill searchSkillValue( Skill skill, List < String > ls ) {
+	private Skill searchSkillValue(Skill skill, List<String> ls) {
 
 		String prevElement = "";
 
-		for ( String s : ls ) {
-			if ( prevElement.equals( skill.getName() ) ) {
-				int value = Integer.parseInt( s );
-				return new Skill( skill, value );
+		for (String s : ls) {
+			if (prevElement.equals(skill.getName())) {
+				int value = Integer.parseInt(s);
+				return new Skill(skill, value);
 			}
 			prevElement = s;
 		}
-		return new Skill( skill );
+		return new Skill(skill);
 	}
 
 	/**
@@ -94,19 +94,21 @@ public class Units_ToVar {
 	 * @param playerSkills
 	 *            Some elements in this list can be duplicates.
 	 */
-	private List < Skill > mergeSkills( List < Skill > playerSkills ) {
+	private List<Skill> mergeSkills(List<Skill> playerSkills) {
 
 		return playerSkills;
 	}
 
-	private Attribute searchForAttribute( String toSearch, List < String > ls ) {
-		for ( Attribute a : attributes ) {
-			if ( a.getName().equals( toSearch ) ) {
-				System.out.println( "Attribute found : " + a.getName() + " , " + a.getValue() );
-				return searchAttributeValue( a, ls );
-			}
+	private Attribute searchForAttribute(String toSearch, List<String> ls) {
+
+		for (Attribute a : attributes) {
+			for (String s : a.getAlias())
+				if (s.equals(toSearch)) {
+					System.out.println("Attribute found : " + a.getName() + " , " + a.getValue());
+					return searchAttributeValue(a, ls);
+				}
 		}
-		return new Attribute( toSearch );
+		return new Attribute(toSearch);
 	}
 
 	/**
@@ -119,87 +121,82 @@ public class Units_ToVar {
 	 *
 	 * @return Attribute Returns the Attribute of the player, with all aliases.
 	 */
-	private Attribute searchAttributeValue( Attribute attribute, List < String > ls ) {
+	private Attribute searchAttributeValue(Attribute attribute, List<String> ls) {
 
-		String prevElement = "";
+		for (String a : attribute.getAlias()) {
+			String prevElement = "";
 
-		for ( String s : ls ) {
-			if ( prevElement.equals( attribute.getName() ) ) {
-				int value = Integer.parseInt( s );
-				return new Attribute( attribute, value );
+			for (String s : ls) {
+				if (prevElement.equals(a)) {
+					int value = Integer.parseInt(s);
+					return new Attribute(attribute, value);
+				}
+				prevElement = s;
 			}
-			prevElement = s;
 		}
-		return new Attribute( attribute );
+		return new Attribute(attribute);
 	}
 
 	/**
 	 * Puts all the data,which are Strings, from units_as_data and creates new
-	 * Objects from these Strings and puts them in a new and usable Linked
-	 * List.<br>
+	 * Objects from these Strings and puts them in a new and usable Linked List.
+	 * <br>
 	 * AD stays for "AS DATA".
 	 * 
 	 * @return
 	 */
-	private List < Unit > units_AD_to_var() {
+	private List<Unit> units_AD_to_var() {
 
 		// These Variables contain the data for a unit
-		List < Skill > playerSkills = new ArrayList <>();
-		List < Attribute > playerAtts = new ArrayList <>();
+		List<Skill> playerSkills = new ArrayList<>();
+		List<Attribute> playerAtts = new ArrayList<>();
 		String playerName = "";
 		boolean playerStatus = false;
 
 		// Logic
 		String prevElement = "";
 
-		for ( List < String > ls : units_as_data ) {
-			if ( !ls.isEmpty() ) {
+		for (List<String> ls : units_as_data) {
+			if (!ls.isEmpty()) {
 
-				for ( String s : ls ) {
+				for (String s : ls) {
 
-					if ( !s.equals( "$" ) ) {
+					if (!s.equals("$")) {
 
-						if ( prevElement.equals( "Player" ) || prevElement.equals( "player" ) ) {
+						if (prevElement.equals("Player") || prevElement.equals("player")) {
 							try {
-								playerStatus = Boolean.getBoolean( s );
-							}
-							catch ( Exception e ) {
+								playerStatus = Boolean.getBoolean(s);
+							} catch (Exception e) {
 								e.printStackTrace();
-								System.out.println( "ERROR: Can not create status of player from data." );
+								System.out.println("ERROR: Can not create status of player from data.");
 							}
-						}
-						else if ( prevElement.equals( "Name" ) || prevElement.equals( "name" ) ) {
+						} else if (prevElement.equals("Name") || prevElement.equals("name")) {
 							try {
 								playerName = s;
-							}
-							catch ( Exception e ) {
+							} catch (Exception e) {
 								e.printStackTrace();
-								System.out.println( "ERROR : Can not get the Playername" );
+								System.out.println("ERROR : Can not get the Playername");
 							}
-						}
-						else if ( prevElement.equals( "Skill" ) ) {
+						} else if (prevElement.equals("Skill")) {
 							// This case is needed, to get the alias from
 							// existing skills and put them into the instances
 							// of the player skills. Same for the Attribute.
-							if ( !playerSkills.contains( s ) ) {
-								playerSkills.add( searchForSkill( s, ls ) );
+							if (!playerSkills.contains(s)) {
+								playerSkills.add(searchForSkill(s, ls));
+							} else {
+								mergeSkills(playerSkills);
 							}
-							else {
-								mergeSkills( playerSkills );
-							}
-						}
-						else if ( prevElement.equals( "Attribute" ) ) {
-							playerAtts.add( searchForAttribute( s, ls ) );
+						} else if (prevElement.equals("Attribute")) {
+							playerAtts.add(searchForAttribute(s, ls));
 						}
 					}
 
 					prevElement = s;
 				}
-				units.add( new Unit( playerName, playerSkills, playerAtts, playerStatus ) );
+				units.add(new Unit(playerName, playerSkills, playerAtts, playerStatus));
 			}
 
 		}
-
 		return this.units;
 
 	}
@@ -210,15 +207,15 @@ public class Units_ToVar {
 
 	public void printUnitsFromData() {
 
-		if ( units_as_data == null ) {
-			System.out.println( "units from data: No data found." );
+		if (units_as_data == null) {
+			System.out.println("units from data: No data found.");
 			return;
 		}
 
-		System.out.println( "\nUnits from data: " );
+		System.out.println("\nUnits from data: ");
 
-		for ( List < String > s : units_as_data ) {
-			System.out.println( s );
+		for (List<String> s : units_as_data) {
+			System.out.println(s);
 		}
 	}
 
@@ -226,12 +223,12 @@ public class Units_ToVar {
 	 * Prints all Units, usable for the game.
 	 */
 	public void printUnits() {
-		System.out.println( "Units : \n" );
-		;
-		for ( Unit u : units ) {
-			System.out.println( u.toString() );
+		System.out.println("Units : \n");
+
+		for (Unit u : units) {
+			System.out.println(u.toString());
 		}
-		System.out.println( "No more Units" );
+		System.out.println("No more Units");
 	}
 
 	/**
@@ -246,27 +243,27 @@ public class Units_ToVar {
 	// GETTER AND SETTER
 	//
 
-	public List < Unit > getUnits() {
+	public List<Unit> getUnits() {
 		return this.units;
 	}
 
-	public List < List < String > > get_units_as_data() {
+	public List<List<String>> get_units_as_data() {
 		return this.units_as_data;
 	}
 
-	public List < Skill > getSkills() {
+	public List<Skill> getSkills() {
 		return skills;
 	}
 
-	public void setSkills( List < Skill > skills ) {
+	public void setSkills(List<Skill> skills) {
 		this.skills = skills;
 	}
 
-	public List < Attribute > getAttributes() {
+	public List<Attribute> getAttributes() {
 		return attributes;
 	}
 
-	public void setAttributes( List < Attribute > attributes ) {
+	public void setAttributes(List<Attribute> attributes) {
 		this.attributes = attributes;
 	}
 
