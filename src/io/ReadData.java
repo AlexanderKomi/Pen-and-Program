@@ -85,7 +85,7 @@ public class ReadData {
 							// works
 							attributes_as_data.add( inFile.trim() );
 						}
-						else if ( s.contains( "Pen and Paper\\data\\" + this.game + "\\player\\" ) ) {
+						else if ( s.contains( "\\data\\" + this.game + "\\player\\" ) ) {
 							// TODO: in Progress
 							content.add( inFile.trim() );
 
