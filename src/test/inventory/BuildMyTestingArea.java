@@ -29,7 +29,7 @@ public class BuildMyTestingArea {
 	}
 
 	public void addWearables() {
-		Wearable wearable1 = new Wearable(null, null, null, 0, null);
+		Wearable wearable1 = new Wearable("Kettenruestung", null, null, 0, null);
 		Wearable wearable2 = new Wearable(null, null, null, 0, null);
 		Wearable wearable3 = new Wearable(null, null, null, 0, null);
 		Wearable wearable4 = new Wearable(null, null, null, 0, null);
@@ -54,6 +54,11 @@ public class BuildMyTestingArea {
 		inventar.addItem(consumable3);
 		inventar.addItem(consumable4);
 		inventar.addItem(consumable5);
+	}
+
+	public void equipMe() {
+		inventar.equipItem(inventar.getItemByName("Excalibur"));
+		inventar.equipItem(inventar.getItemByName("Kettenruestung"));
 	}
 
 	public Inventory getInventar() {

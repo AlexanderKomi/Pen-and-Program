@@ -9,7 +9,7 @@ import model.Money;
  * 
  * @author Micha
  */
-public class Weapon extends Item {
+public class Weapon extends Item{
 	private Damage damage;
 
 	public Weapon(String name, Money value, String description, Damage damage) {
@@ -23,5 +23,4 @@ public class Weapon extends Item {
 	public void setDamage(Damage damage) {
 		this.damage = damage;
 	}
-
 }

@@ -8,7 +8,7 @@ import model.Money;
  * 
  * @author Micha
  */
-public class Wearable extends Item implements Equipment {
+public class Wearable extends Item{
 	private int defensValue;
 	private String effect;
 
@@ -31,5 +31,4 @@ public class Wearable extends Item implements Equipment {
 	public void setDefensValue(int defensValue) {
 		this.defensValue = defensValue;
 	}
-
 }

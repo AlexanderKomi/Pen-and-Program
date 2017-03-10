@@ -9,8 +9,18 @@ import model.Money;
  * @author Micha
  */
 public class Consumable extends Item {
-	public Consumable(String name, Money value, String description, String effect) {
+	private String effect;
 
+	public Consumable(String name, Money value, String description, String effect) {
+		this.effect = effect;
+	}
+
+	public String getEffect() {
+		return effect;
+	}
+
+	public void setEffect(String effect) {
+		this.effect = effect;
 	}
 
 }

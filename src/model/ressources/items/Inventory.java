@@ -3,7 +3,6 @@
  */
 package model.ressources.items;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,7 +12,7 @@ import java.util.Map;
  */
 public class Inventory {
 	private Map<Integer, Item> itemList = new HashMap<Integer, Item>();
-	private ArrayList<Equipment> equipment = new ArrayList<>();
+	private Equipment equipment = new Equipment();
 
 	public Inventory() {
 
@@ -23,7 +22,15 @@ public class Inventory {
 		return itemList;
 	}
 
-	public Map<Integer, Item> removeItem() {
+	public Map<Integer, Item> addItem(int quantity, Item item) {
+		return itemList;
+	}
+
+	public Map<Integer, Item> removeItem(Item item) {
+		return itemList;
+	}
+
+	public Map<Integer, Item> removeItem(int quantity, Item item) {
 		return itemList;
 	}
 
@@ -40,11 +47,18 @@ public class Inventory {
 	}
 
 	public Item getItemByName(String name) {
-
 		return null;
 	}
 
-	public ArrayList<Equipment> getEquipment() {
+	public boolean isEquipped(String name) {
+		return false;
+	}
+
+	public boolean isEquipped(Item item) {
+		return false;
+	}
+
+	public Equipment getEquipment() {
 		return equipment;
 	}
 
